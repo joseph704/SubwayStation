@@ -5,9 +5,7 @@
 //  Created by Joseph Cha on 2022/06/29.
 //
 
-import SnapKit
-import UIKit
-
+import Alamofire
 import SnapKit
 import UIKit
 
@@ -29,6 +27,7 @@ class StationSearchViewController: UIViewController {
         // 어떤 순서로 실행이 되는지 알수 있어, 유지보수나 코드 흐름 파악 시 용이
         setNavigationItems()
         setTableViewLayout()
+        requestStationName()
         
     }
     
@@ -47,6 +46,18 @@ class StationSearchViewController: UIViewController {
     private func setTableViewLayout() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview()}
+    }
+    
+    private func requestStationName() {
+        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/서울역"
+        
+        AF.request(urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")
+            .responseDecodable(of: StationResponseModel.self) { response in
+                guard case .success(let data) = response.result else { return }
+                
+                print(data)
+            }
+            .resume()
     }
 }
 

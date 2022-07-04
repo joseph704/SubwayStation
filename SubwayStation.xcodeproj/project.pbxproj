@@ -16,6 +16,8 @@
 		0431031D286C6A910028237D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0431031C286C6A910028237D /* Alamofire */; };
 		04310320286C72500028237D /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431031F286C72500028237D /* StationDetailViewController.swift */; };
 		04310322286C778D0028237D /* StationDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04310321286C778D0028237D /* StationDetailCollectionViewCell.swift */; };
+		04310324286C7F410028237D /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04310323286C7F410028237D /* StationResponseModel.swift */; };
+		0458C309287301BE00CD9D72 /* StationArrivalDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C308287301BE00CD9D72 /* StationArrivalDataResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		04310312286C6A0F0028237D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0431031F286C72500028237D /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
 		04310321286C778D0028237D /* StationDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		04310323286C7F410028237D /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
+		0458C308287301BE00CD9D72 /* StationArrivalDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationArrivalDataResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				0431030D286C6A0F0028237D /* Assets.xcassets */,
 				0431030F286C6A0F0028237D /* LaunchScreen.storyboard */,
 				04310312286C6A0F0028237D /* Info.plist */,
+				04310323286C7F410028237D /* StationResponseModel.swift */,
+				0458C308287301BE00CD9D72 /* StationArrivalDataResponseModel.swift */,
 			);
 			path = SubwayStation;
 			sourceTree = "<group>";
@@ -161,7 +167,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04310320286C72500028237D /* StationDetailViewController.swift in Sources */,
+				04310324286C7F410028237D /* StationResponseModel.swift in Sources */,
 				04310309286C6A0E0028237D /* StationSearchViewController.swift in Sources */,
+				0458C309287301BE00CD9D72 /* StationArrivalDataResponseModel.swift in Sources */,
 				04310305286C6A0E0028237D /* AppDelegate.swift in Sources */,
 				04310322286C778D0028237D /* StationDetailCollectionViewCell.swift in Sources */,
 				04310307286C6A0E0028237D /* SceneDelegate.swift in Sources */,
