@@ -53,8 +53,17 @@ class StationSearchViewController: UIViewController {
             .responseDecodable(of: StationResponseModel.self) { [weak self] response in
                 guard let self = self else { return }
                 guard case .success(let data) = response.result else { return }
-                self.stations = data.stations
-                self.tableView.reloadData()
+                
+                var stationDictionary = [String: String]()
+                data.stations.forEach {
+                    stationDictionary[$0.stationName, default: ""] += "\($0.lineNumber)"
+                }
+                
+                stationDictionary.forEach {
+                    self.stations.removeAll()
+                    self.stations.append(Station(stationName: $0.key, lineNumber: $0.value.replacingOccurrences(of: "선", with: "선 ")))
+                    self.tableView.reloadData()
+                }
             }
             .resume()
     }
@@ -66,8 +75,7 @@ extension StationSearchViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        tableView.isHidden = true
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         stations = []
     }
     

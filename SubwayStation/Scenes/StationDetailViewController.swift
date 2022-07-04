@@ -60,7 +60,7 @@ final class StationDetailViewController: UIViewController {
     @objc private func fetchData() {
         
         let stationName = station.stationName
-        let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "역", with: ""))"
+        let urlString = "http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/\(stationName.replacingOccurrences(of: "서울역", with: "서울"))"
         
         
         AF
